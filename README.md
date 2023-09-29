@@ -1,0 +1,3 @@
+# Weather-App
+A simple java swing application that uses open weather map api to get the weather data and then display then currently it's incomplete....
+To use this please paste you api key with the name "api.txt" in the com.main package.
