@@ -1,0 +1,4 @@
+/*
+A simple java application for displaying weather of any city
+
+ */
