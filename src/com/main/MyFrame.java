@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -30,7 +31,7 @@ public class MyFrame implements ActionListener, WeatherDataCallback {
     private String APIKEY;
     private Thread thread;
     WeatherData wd;
-    // lable for adding compent to the remaning two panels
+    // lable for adding component to the remaining two panels
     JLabel cityLabel, currentTemp, currentTempDisplay;
 
 
@@ -73,7 +74,7 @@ public class MyFrame implements ActionListener, WeatherDataCallback {
             lblm.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    frame.setExtendedState(Frame.ICONIFIED); // minimized whene the label is pressed
+                    frame.setExtendedState(Frame.ICONIFIED); // minimized when the label is pressed
                 }
             });
 
@@ -205,7 +206,7 @@ public class MyFrame implements ActionListener, WeatherDataCallback {
                         System.out.println(receivedData.toString()); // check purpose
                         connection.disconnect(); // closing the connection
                         // ---------------------------------- ------------------------------------------------------------------
-                        // let's convert the recivecdatat to string file
+                        // let's convert the received data to string file
 
                         resultInString = receivedData.toString();
 
@@ -224,7 +225,7 @@ public class MyFrame implements ActionListener, WeatherDataCallback {
                     } catch (Exception ee) {
                         ee.printStackTrace();
                     }
-                    onWeatherDataReceived(resultInString); // this is the method of the call back interface so if get called as last statementof the thread so that i will call the method when all the req data is recieved
+                     onWeatherDataReceived(resultInString); // this is the method of the call back interface so if get called as last statementof the thread so that i will call the method when all the req data is recieved
                     /*
                     as we have implemented as call back interface so we muse overdrider the method but the method is that we have override is teh last statemet of the thred so i get called when the thread is bout to completes and in this way we get out data righ
                     Yes, your explanation makes sense. You've correctly identified the key aspects of how the callback interface works in this context:
